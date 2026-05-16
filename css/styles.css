@@ -1,0 +1,198 @@
+/* -----------------------------------
+   COLOR PALETTE (based on your logo)
+----------------------------------- */
+:root {
+    --navy: #0A2A43;
+    --slate: #A7B8C8;
+    --light-bg: #F5F8FA;
+    --white: #FFFFFF;
+    --yellow: #FFD447;
+    --text-dark: #1A1A1A;
+}
+
+/* -----------------------------------
+   GLOBAL RESET
+----------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* -----------------------------------
+   CONTAINER
+----------------------------------- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* -----------------------------------
+   HEADER + NAV
+----------------------------------- */
+header {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--slate);
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--slate);
+    color: var(--white);
+}
+
+nav a.active {
+    border-bottom: 3px solid var(--yellow);
+}
+
+/* -----------------------------------
+   HERO SECTION
+----------------------------------- */
+.hero {
+    background: linear-gradient(to bottom, var(--white), var(--slate));
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--navy);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 10px 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--yellow);
+    color: var(--navy);
+}
+
+/* -----------------------------------
+   MAIN CONTENT
+----------------------------------- */
+main {
+    padding: 40px 0;
+}
+
+main h2 {
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* -----------------------------------
+   FOOTER
+----------------------------------- */
+footer {
+    background-color: var(--white);
+    border-top: 2px solid var(--slate);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    color: var(--navy);
+}
+
+/* -----------------------------------
+   RESPONSIVE DESIGN
+----------------------------------- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+}
