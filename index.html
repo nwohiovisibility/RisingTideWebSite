@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rising Tide – Home</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <title>VISIBLE Heroes Caller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Visible Caller">
+<link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 
 <body>
+  <header>
+    <img src="risingtide.png" class="app-logo" alt="Rising Tide Logo">
+    <h1>VISIBLE Heroes Caller</h1>
+  </header>
 
-    <!-- HEADER + NAV -->
-    <header>
-        <div class="container nav-container">
-            <img src="assets/logo.png" alt="Rising Tide Logo" class="logo">
+  <main>
+    <div class="controls">
+      <button id="drawBtn">Draw Hero</button>
+      <button id="resetBtn" class="secondary">Reset</button>
+      <div id="drawCounter">Draws: 0</div>
+      <div id="totalHeroes">Total Heroes: …</div>
+    </div>
 
-            <nav>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+    <div class="layout">
+      <section class="current-card" id="currentCard">
+        <div class="hero-name" id="heroName">Tap “Draw Hero” to begin</div>
 
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="support.html">Support Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <!-- ⭐ Added Hero ID display -->
+        <div class="hero-id">Hero ID: <span id="heroID"></span></div>
+
+        <div class="hero-bio" id="heroBio">
+          Each call shows a hero’s name, short bio, and visibility flags.
         </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Rising Tide</h1>
-            <p>Visibility. Community. Empowerment.</p>
-            <a href="about.html" class="btn">Learn More</a>
-        </div>
-    </section>
+        <div class="hero-flags-label">Flags</div>
+        <div class="hero-flags" id="heroFlags"></div>
+      </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="container">
-        <h2>Welcome</h2>
+      <section class="history">
+        <h2>History</h2>
+        <ul class="history-list" id="historyList"></ul>
+      </section>
+    </div>
+  </main>
 
-        <p>
-            Rising Tide is dedicated to increasing visibility, strengthening community connections,
-            and supporting diverse groups through education, outreach, and creative engagement.
-        </p>
+  <footer>
+    VISIBLE Heroes • Shuffle, call, and celebrate all stories.
+  </footer>
 
-        <p>
-            We believe that when one person rises, the tide rises for everyone.
-        </p>
-
-        <p class="initiative-note">
-            Rising Tide is the parent organization of the 
-            <strong>Northwest Ohio Visibility Alliance (NOVA)</strong>, 
-            our regional initiative focused on visibility, belonging, and community empowerment.
-        </p>
-    </main>
-
-    <!-- FOOTER -->
-    <div id="footer"></div>
-    <script src="js/main.js"></script>
-    <script src="js/footer.js"></script>
-
+  <script src="caller.js"></script>
 </body>
 </html>
