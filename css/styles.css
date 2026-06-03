@@ -230,3 +230,14 @@ footer {
         grid-column: 1;
     }
 }
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+@media (max-width: 700px) {
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+}
