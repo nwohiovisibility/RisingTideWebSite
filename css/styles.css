@@ -1,3 +1,43 @@
+/* =======================================================
+   FILE: styles.css
+   PURPOSE:
+     Global stylesheet for the Rising Tide website and the
+     Northwest Ohio Visibility Alliance (NOVA). Defines the
+     color palette, layout rules, typography, responsive
+     behavior, navigation styling, hero sections, footer
+     design, and form grid systems.
+
+   DESCRIPTION:
+     This file provides all shared visual styling across the
+     site. It includes mobile‑responsive rules, grid layouts
+     for forms, navigation behavior, and consistent branding
+     based on the Rising Tide color palette.
+
+   SUPPORTED BY:
+     - header.js      (navigation toggle behavior)
+     - footer.js      (footer injection)
+     - main.js        (general site behavior)
+     - All HTML pages using shared classes and layout rules
+
+   DEPENDENCIES:
+     - assets/logo.png (branding used in header)
+     - HTML structure defined in all Rising Tide pages
+
+   NOTES:
+     - No logic is embedded here.
+     - Update documentation when major layout or palette
+       changes occur.
+     - This stylesheet is used by every page in the site.
+
+   VERSION:
+     v1.0.0
+
+   LAST UPDATED:
+     2026-07-07
+
+   AUTHOR:
+     Brian Von Wert / Rising Tide
+======================================================= */
 /* -----------------------------------
    COLOR PALETTE (based on your logo)
 ----------------------------------- */
