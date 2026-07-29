@@ -18,9 +18,11 @@
        - css/styles.css
 
      VERSION:
-       v1.0.0
+       v1.0.1
+       (Updated to use unified spacing system)
+
      LAST UPDATED:
-       2026-07-28
+       2026-07-29
      AUTHOR:
        Brian Von Wert / Rising Tide
 ======================================================= -->
@@ -50,43 +52,150 @@
     <main class="container">
 
         <!-- INTRO -->
-        <!-- INTRO -->
-<section class="leadership-section">
-    <h2>Our Leadership</h2>
-    <p>
-        Rising Tide is guided by leaders committed to visibility,
-        belonging, and community empowerment. This page introduces
-        the people who help shape our mission and support our work
-        across Northwest Ohio.
-    </p>
-</section>
+        <section class="content-section">
+            <h2>Our Leadership</h2>
+            <p>
+                Rising Tide is guided by leaders committed to visibility,
+                belonging, and community empowerment. This page introduces
+                the people who help shape our mission and support our work
+                across Northwest Ohio.
+            </p>
+        </section>
 
-<!-- EXECUTIVE BOARD -->
-<section class="leadership-section">
-    <h2>Executive Board</h2>
-    <ul>
-        <li><strong>Brian Von Wert</strong> – Chair</li>
-        <li><strong>Sonya Mavis</strong> – Vice Chair</li>
-        <li><strong>Destiny Starry</strong> – Treasurer</li>
-        <li><strong>Rebecca Erford</strong> – Secretary</li>
-        <li><strong>Melissa Renee Ewers</strong> – Director of Activities</li>
-    </ul>
-        <p>
-        Email the board at
-        <a href="mailto:board@nwohiovisibility.com">board@nwohiovisibility.com</a>.
-    </p>
+        <!-- EXECUTIVE BOARD -->
+        <section class="leadership-section">
+            <h2>Executive Board</h2>
 
-</section>
+            <!-- 
+BIO TOGGLE SYSTEM DOCUMENTATION
+--------------------------------
+Purpose:
+    Allows each leader's name to be clicked to reveal a short bio.
+    Clicking another name closes the previous bio.
 
-<!-- ADVISORY BOARD -->
-<section class="leadership-section">
-    <h2>Advisory Board</h2>
-    <ul>
-        <li><strong>Megan A. Brown</strong></li>
-        <li><strong>Tom Comer</strong></li>
-    </ul>
-</section>
+Structure:
+    - Each leader is wrapped in <li class="leader-item">.
+    - The clickable element is <button class="leader-toggle">.
+    - Each button has data-target="bio-xyz".
+    - Each bio is stored in <div id="bio-xyz" class="bio">.
 
+Behavior:
+    - Bios are hidden by default via CSS (display: none).
+    - JavaScript listens for clicks on .leader-toggle.
+    - When clicked:
+        * All bios collapse.
+        * The selected bio expands.
+    - Clicking the same name again collapses it.
+
+Maintenance:
+    - To add a new leader:
+        * Add a new <li> block.
+        * Give the button a unique data-target.
+        * Give the bio a matching id.
+    - To update a bio:
+        * Edit the text inside the corresponding <div class="bio">.
+    - To disable the system:
+        * Remove the JS block or comment it out.
+   -->
+
+            <ul class="leadership-list">
+
+                <!-- Brian -->
+                <li class="leader-item">
+                    <button class="leader-toggle" data-target="bio-brian">
+                        <strong>Brian Von Wert</strong> – Chair
+                    </button>
+                    <div id="bio-brian" class="bio">
+                        <p>
+                            After serving in the US Navy, Brian Von Wert settled in Northwest Ohio,
+                            where he spent more than twenty years working for a large corporation
+                            and building deep ties in the community. He eventually shifted into
+                            local activism and has served as chair of the Fulton County Ohio
+                            Democratic Party for three and a half years. He brings that experience
+                            to his work across the region, focusing on connection, belonging,
+                            and making civic spaces feel human.
+                        </p>
+                    </div>
+                </li>
+
+                <!-- Sonya -->
+                <li class="leader-item">
+                    <button class="leader-toggle" data-target="bio-sonya">
+                        <strong>Sonya Mavis</strong> – Vice Chair
+                    </button>
+                    <div id="bio-sonya" class="bio">
+                        <p>Bio coming soon.</p>
+                    </div>
+                </li>
+
+                <!-- Destiny -->
+                <li class="leader-item">
+                    <button class="leader-toggle" data-target="bio-destiny">
+                        <strong>Destiny Starry</strong> – Treasurer
+                    </button>
+                    <div id="bio-destiny" class="bio">
+                        <p>Bio coming soon.</p>
+                    </div>
+                </li>
+
+                <!-- Rebecca -->
+                <li class="leader-item">
+                    <button class="leader-toggle" data-target="bio-rebecca">
+                        <strong>Rebecca Erford</strong> – Secretary
+                    </button>
+                    <div id="bio-rebecca" class="bio">
+                        <p>Bio coming soon.</p>
+                    </div>
+                </li>
+
+                <!-- Melissa -->
+                <li class="leader-item">
+                    <button class="leader-toggle" data-target="bio-melissa">
+                        <strong>Melissa Renee Ewers</strong> – Director of Activities
+                    </button>
+                    <div id="bio-melissa" class="bio">
+                        <p>Bio coming soon.</p>
+                    </div>
+                </li>
+
+            </ul>
+
+            <p>
+                Email the board at
+                <a href="mailto:board@nwohiovisibility.com">board@nwohiovisibility.com</a>.
+            </p>
+        </section>
+
+        <!-- ADVISORY BOARD -->
+        <section class="leadership-section">
+            <h2>Advisory Board</h2>
+
+            <!-- Advisory Board bios use the same toggle system as the Executive Board. -->
+
+            <ul class="leadership-list">
+
+                <!-- Megan -->
+                <li class="leader-item">
+                    <button class="leader-toggle" data-target="bio-megan">
+                        <strong>Megan A. Brown</strong>
+                    </button>
+                    <div id="bio-megan" class="bio">
+                        <p>Bio coming soon.</p>
+                    </div>
+                </li>
+
+                <!-- Tom -->
+                <li class="leader-item">
+                    <button class="leader-toggle" data-target="bio-tom">
+                        <strong>Tom Comer</strong>
+                    </button>
+                    <div id="bio-tom" class="bio">
+                        <p>Bio coming soon.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
 
     </main>
 

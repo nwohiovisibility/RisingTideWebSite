@@ -17,26 +17,25 @@
        External JavaScript modules handle dynamic injection of
        shared site components:
 
-         - main.js        (general site behavior)
-         - header.js      (header injection)
-         - footer.js      (footer injection)
+         - main.js
+         - header.js
+         - footer.js
 
      DEPENDENCIES:
-       - css/styles.css   (global site styling)
+       - css/styles.css
        - Google Calendar embed (iframe)
        - Shared HTML fragments loaded by header.js/footer.js
 
      NOTES:
        - No logic is embedded here.
        - This file contains only layout and content.
-       - Update documentation when structural or calendar
-         integration changes are made.
+       - Updated to use the global .content-section spacing system.
 
      VERSION:
-       v1.0.0
+       v1.0.1
 
      LAST UPDATED:
-       2026-07-07
+       2026-07-29
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -66,7 +65,7 @@
     <!-- MAIN CONTENT -->
     <main class="container">
 
-        <section>
+        <section class="content-section">
             <h2>Rising Tide & NOVA Events</h2>
             <p>
                 Our shared events calendar includes meetings, community gatherings, visibility 
@@ -75,17 +74,16 @@
                 You can view upcoming events below or subscribe to stay updated automatically.
             </p>
 
-            <!-- SUBSCRIBE BUTTON -->
-            <p style="margin-top: 15px;">
+            <p>
                 <a href="https://calendar.google.com/calendar/u/0?cid=c_bc0077d5eefb5ef11a3a0655bc5074e67ea1166750661f975c0c3d74150c4612@group.calendar.google.com" 
                    class="btn">
                    Subscribe to Our Calendar
                 </a>
             </p>
 
-            <!-- GOOGLE CALENDAR EMBED -->
-            <div style="margin-top: 30px;">
+            <div>
                 <iframe 
+                    title="Rising Tide and NOVA Events Calendar"
                     src="https://calendar.google.com/calendar/embed?src=c_bc0077d5eefb5ef11a3a0655bc5074e67ea1166750661f975c0c3d74150c4612%40group.calendar.google.com&ctz=America%2FNew_York" 
                     style="border: 0" 
                     width="100%" 

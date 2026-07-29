@@ -34,10 +34,11 @@
        - Mailto submission depends on user's local email client.
 
      VERSION:
-       v1.0.0
+       v1.0.1
+       (Updated to use unified spacing system)
 
      LAST UPDATED:
-       2026-07-07
+       2026-07-29
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -56,7 +57,7 @@
     <!-- DYNAMIC HEADER -->
     <div id="header"></div>
 
-    <!-- PAGE HERO (matches all other pages) -->
+    <!-- PAGE HERO -->
     <section class="hero">
         <div class="container hero-content">
             <h1>Join Rising Tide</h1>
@@ -67,13 +68,27 @@
     <!-- MAIN CONTENT -->
     <main class="container">
 
-        <section class="rising-tide-form">
+        <!-- OUTER WRAPPER USING GLOBAL SPACING -->
+        <section class="content-section">
 
-            <h2>Rising Tide - Member Information Form</h2>
+            <h2>Rising Tide – Member Information Form</h2>
 
-            <p><strong>Privacy and Use of Information:</strong> The information you share on this form is for <strong>Rising Tide use only</strong>. It will be kept confidential and will not be shared outside the organization. We collect this so we can connect people with the right support, skills, or resources when needs arise in our community. If someone is looking for help and you've offered a skill or experience that fits, we may reach out to ask whether you're open to being connected. Your information will never be used for any other purpose.</p>
+            <p>
+                <strong>Privacy and Use of Information:</strong>
+                The information you share on this form is for
+                <strong>Rising Tide use only</strong>. It will be kept confidential and will not
+                be shared outside the organization. We collect this so we can connect people with
+                the right support, skills, or resources when needs arise in our community. If
+                someone is looking for help and you've offered a skill or experience that fits,
+                we may reach out to ask whether you're open to being connected. Your information
+                will never be used for any other purpose.
+            </p>
 
-            <form action="mailto:info@nwohiovisibility.com" method="post" enctype="text/plain" class="join-grid">
+            <!-- FORM GRID -->
+            <form action="mailto:info@nwohiovisibility.com"
+                  method="post"
+                  enctype="text/plain"
+                  class="join-grid">
 
                 <!-- CONTACT INFO -->
                 <div class="full"><h2>Contact Information</h2></div>
@@ -161,7 +176,6 @@
 
                 <div class="full">
                     <button type="submit" class="btn">Submit Form</button>
-
                 </div>
 
             </form>

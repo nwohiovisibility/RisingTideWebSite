@@ -1,28 +1,32 @@
-/* ======================================================= FILE: main.js PURPOSE: Provides general interactive behavior for the Rising Tide website, including navigation toggling and shared UI functionality used across all pages.
+console.log("main.js loaded");
 
-DESCRIPTION: This script attaches the hamburger menu toggle behavior for mobile 
-navigation. It works alongside header.js, which injects the header markup dynamically. 
-When the hamburger icon is clicked, the navigation menu expands or collapses.
+/* =======================================================
+   FILE: main.js
+   PURPOSE:
+       Provides general interactive behavior for the Rising Tide
+       website that does NOT depend on dynamically injected header
+       elements.
+======================================================= */
 
-SUPPORTED BY: - header.js (injects header and menu elements) - styles.css (defines
- .hamburger and .nav-links behavior) - footer.js (paired for consistent layout across 
- pages)
+// Leadership bio toggle system
+document.addEventListener("DOMContentLoaded", function () {
+    const toggles = document.querySelectorAll(".leader-toggle");
 
-DEPENDENCIES: - A valid <div id="header"></div> with injected markup - Elements with IDs: 
-#hamburger and #nav-links
+    toggles.forEach(toggle => {
+        toggle.addEventListener("click", () => {
+            const targetId = toggle.getAttribute("data-target");
+            const targetBio = document.getElementById(targetId);
 
-NOTES: - No additional logic is embedded here. - Update documentation if navigation 
-structure changes. - This script is used by every page in the Rising Tide site.
+            // Close all bios first
+            document.querySelectorAll(".bio").forEach(bio => {
+                if (bio !== targetBio) {
+                    bio.style.display = "none";
+                }
+            });
 
-VERSION: v1.0.0
-
-LAST UPDATED: 2026-07-07
-
-AUTHOR: Brian Von Wert / Rising Tide ================================================ */
-// Hamburger menu toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+            // Toggle the selected bio
+            targetBio.style.display =
+                targetBio.style.display === "block" ? "none" : "block";
+        });
+    });
 });
