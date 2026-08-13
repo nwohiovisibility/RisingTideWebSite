@@ -1,0 +1,238 @@
+<!-- =======================================================
+     Filename: MostRecentMinutes.html
+     Last Edit Date: 2026-08-13 EST
+     Version: 1.0.0
+
+     PURPOSE:
+       Public-facing meeting summary page for the most recent Rising
+       Tide meeting. This file is designed to be a clean, readable
+       HTML version of the minutes that can also be printed or saved
+       as a PDF.
+
+     DESCRIPTION:
+       This page provides a structured summary of recent community
+       meeting notes, meeting decisions, and action items. It gives
+       the organization a polished way to present meeting records on
+       the website before formal PDF exports are finalized.
+
+     AUTHOR:
+       Brian Von Wert / Rising Tide
+======================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Recent Minutes</title>
+    <style>
+        :root {
+            --navy: #0A2A43;
+            --slate: #A7B8C8;
+            --light-bg: #F5F8FA;
+            --white: #FFFFFF;
+            --yellow: #FFD447;
+            --text-dark: #1A1A1A;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--white);
+            border: 1px solid var(--slate);
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(10, 42, 67, 0.08);
+            padding: 36px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--slate);
+            padding-bottom: 18px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--navy);
+            font-size: 2.1rem;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        section {
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .box {
+            border: 1px solid var(--slate);
+            border-radius: 10px;
+            background: var(--light-bg);
+            padding: 14px;
+            min-height: 90px;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            background: var(--light-bg);
+            border: 1px solid var(--slate);
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid var(--slate);
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #edf2f7;
+            color: var(--navy);
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 18px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn.secondary {
+            background-color: var(--white);
+            color: var(--navy);
+            border: 1px solid var(--navy);
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                margin: 20px 14px;
+                padding: 20px;
+            }
+
+            .meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Rising Tide</h1>
+            <div class="subtitle">Most Recent Meeting Minutes</div>
+        </div>
+
+        <div class="meta">
+            <div class="meta-item">
+                <span class="label">Date</span>
+                <div>Insert Meeting Date</div>
+            </div>
+            <div class="meta-item">
+                <span class="label">Location</span>
+                <div>Insert Location or Format</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Attendees</h2>
+            <div class="box">Add attendee names and participants here.</div>
+        </section>
+
+        <section>
+            <h2>Agenda</h2>
+            <div class="box">Add agenda items discussed.</div>
+        </section>
+
+        <section>
+            <h2>Summary of Discussion</h2>
+            <div class="box">Add summary of the discussion and key points from the meeting.</div>
+        </section>
+
+        <section>
+            <h2>Decisions</h2>
+            <div class="box">Add decisions made and any votes or consensus notes.</div>
+        </section>
+
+        <section>
+            <h2>Action Items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Owner</th>
+                        <th style="width: 40%;">Task</th>
+                        <th style="width: 30%;">Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="actions">
+            <a href="" class="btn" onclick="window.print(); return false;">Print / Save as PDF</a>
+            <a href="MostRecentMinutes.html" class="btn secondary" download>Download Copy</a>
+        </div>
+    </div>
+</body>
+</html>

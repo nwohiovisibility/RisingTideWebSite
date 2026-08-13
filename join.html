@@ -1,18 +1,21 @@
 <!-- =======================================================
-     FILE: join.html
+     Filename: join.html
+     Last Edit Date: 2026-08-13 EST
+     Version: 1.1.0
+
      PURPOSE:
        Public-facing membership and volunteer interest form for
        Rising Tide and the Northwest Ohio Visibility Alliance
-       (NOVA). Allows community members to share contact info,
-       skills, availability, and reasons for getting involved.
+       (NOVA). This page introduces the community and invites
+       people to share their interests, skills, and availability.
 
      DESCRIPTION:
        This file defines the structure and content of the Join
-       page. It includes a detailed form that collects member
-       information, skills, availability, and personal notes.
-       The form is submitted via mailto for direct inbox
-       delivery. Shared components (header and footer) are
-       dynamically injected.
+       page. It includes a detailed form that collects contact
+       information, community interests, skills, availability,
+       and reasons for getting involved. The form is submitted
+       via mailto for direct inbox delivery. Shared components
+       (header and footer) are dynamically injected.
 
      SUPPORTED BY:
        External JavaScript modules handle dynamic injection of
@@ -31,14 +34,11 @@
        - This file contains only layout and content.
        - Update documentation when form structure or fields
          change.
-       - Mailto submission depends on user's local email client.
-
-     VERSION:
-       v1.0.1
-       (Updated to use unified spacing system)
-
-     LAST UPDATED:
-       2026-07-29
+       - Mailto submission depends on the user's local email
+         client.
+       - This page is intentionally written to invite people
+         into a new, community-led effort without implying a
+         long-established organization.
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -60,8 +60,8 @@
     <!-- PAGE HERO -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Join Rising Tide</h1>
-            <p>Help build visibility, belonging, and community.</p>
+            <h1>Join the Community</h1>
+            <p>We’re building a welcoming, visible, and connected future together.</p>
         </div>
     </section>
 
@@ -71,24 +71,41 @@
         <!-- OUTER WRAPPER USING GLOBAL SPACING -->
         <section class="content-section">
 
-            <h2>Rising Tide – Member Information Form</h2>
+            <h2>Join Rising Tide</h2>
 
             <p>
-                <strong>Privacy and Use of Information:</strong>
-                The information you share on this form is for
-                <strong>Rising Tide use only</strong>. It will be kept confidential and will not
-                be shared outside the organization. We collect this so we can connect people with
-                the right support, skills, or resources when needs arise in our community. If
-                someone is looking for help and you've offered a skill or experience that fits,
-                we may reach out to ask whether you're open to being connected. Your information
-                will never be used for any other purpose.
+                Rising Tide is a growing community effort rooted in visibility, belonging, and care.
+                We welcome people who want to contribute, connect, learn, and help build something
+                meaningful for Northwest Ohio. No prior experience is required—just a willingness to
+                participate and show up with respect and community-minded energy.
             </p>
 
-            <!-- FORM GRID -->
-            <form action="mailto:info@nwohiovisibility.com"
-                  method="post"
-                  enctype="text/plain"
-                  class="join-grid">
+            <p class="form-intro">
+                <strong>Privacy and use of information:</strong> The information you share here is used
+                to stay connected with the community, coordinate opportunities, and support the work of
+                Rising Tide and NOVA. It will be kept confidential and used only for the purpose of
+                community-building and outreach.
+            </p>
+
+            <div class="footer-links" style="justify-content:flex-start; margin: 0 0 1.5rem;">
+                <div class="policy-card">
+                    <h3>Bylaws</h3>
+                    <p>Review the organization’s guiding principles.</p>
+                    <a href="bylaws.html">Read Page</a>
+                </div>
+                <div class="policy-card">
+                    <h3>Code of Conduct</h3>
+                    <p>Learn the community standards that guide our work.</p>
+                    <a href="code-of-conduct.html">Read Page</a>
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <!-- FORM GRID -->
+                <form action="mailto:nwohiovisibility@gmail.com"
+                      method="post"
+                      enctype="text/plain"
+                      class="join-grid">
 
                 <!-- CONTACT INFO -->
                 <div class="full"><h2>Contact Information</h2></div>
@@ -178,7 +195,8 @@
                     <button type="submit" class="btn">Submit Form</button>
                 </div>
 
-            </form>
+                </form>
+            </div>
         </section>
 
     </main>

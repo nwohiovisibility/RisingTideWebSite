@@ -1,17 +1,21 @@
 <!-- =======================================================
-     FILE: index.html
+     Filename: index.html
+     Last Edit Date: 2026-08-13 EST
+     Version: 1.2.0
+
      PURPOSE:
        Public-facing home page for the Rising Tide website and
-       the Northwest Ohio Visibility Alliance (NOVA). Serves as
-       the primary landing page for visitors, introducing the
-       organization’s core message and directing users to key
-       sections of the site.
+       the Northwest Ohio Visibility Alliance (NOVA). This page
+       introduces the organization in a clear, welcoming way and
+       directs visitors to the best next steps: learning more,
+       joining the community, and getting connected.
 
      DESCRIPTION:
        This file defines the structure and content of the home
-       page. It includes the main hero section, introductory
-       messaging, and navigation to the About page. Shared site
-       components (header and footer) are dynamically injected.
+       page. It includes the primary hero section, introductory
+       mission messaging, and a simple call-to-action layout.
+       Shared site components (header and footer) are dynamically
+       injected.
 
      SUPPORTED BY:
        External JavaScript modules handle dynamic injection of
@@ -30,13 +34,8 @@
        - This file contains only layout and content.
        - Update documentation when hero structure or messaging
          changes.
-
-     VERSION:
-       v1.0.1
-       (Updated to use .content-section spacing system)
-
-     LAST UPDATED:
-       2026-07-29
+       - This page is intentionally written to reflect a new,
+         community-centered organization that is still growing.
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -59,8 +58,11 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Rising Tide</h1>
-            <p>Visibility. Community. Empowerment.</p>
-            <a href="about.html" class="btn">Learn More</a>
+            <p>We are building a more visible, connected, and welcoming community.</p>
+            <div>
+                <a href="join.html" class="btn">Join Us</a>
+                <a href="contact.html" class="btn" style="margin-left: 10px;">Contact Us</a>
+            </div>
         </div>
     </section>
 
@@ -71,18 +73,99 @@
             <h2>Welcome</h2>
 
             <p>
-                Rising Tide is dedicated to increasing visibility, strengthening community connections,
-                and supporting diverse groups through education, outreach, and creative engagement.
+                Rising Tide is a growing community effort rooted in visibility, belonging, and connection.
+                We are creating spaces where people can feel seen, supported, and invited to participate.
             </p>
 
             <p>
-                We believe that when one person rises, the tide rises for everyone.
+                Our work centers on building community, lifting up voices, and helping neighbors connect
+                across difference with care, respect, and shared purpose.
             </p>
 
             <p class="initiative-note">
-                Rising Tide is the parent organization of the 
-                <strong>Northwest Ohio Visibility Alliance (NOVA)</strong>, 
-                our regional initiative focused on visibility, belonging, and community empowerment.
+                Rising Tide is the parent organization of the
+                <strong>Northwest Ohio Visibility Alliance (NOVA)</strong>,
+                a regional initiative focused on community visibility, belonging, and empowerment.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>What We’re Building</h2>
+            <p>
+                We are gathering people who care about stronger community ties, broader visibility, and a
+                more welcoming Northwest Ohio. Whether you are looking to connect, volunteer, learn more,
+                or simply be part of a growing effort, there is a place for you here.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Why It Matters</h2>
+            <p>
+                When people feel visible and valued, communities grow stronger. Rising Tide is centered on
+                the belief that every person deserves to be seen, supported, and included in the life of
+                the community.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Upcoming Opportunities</h2>
+            <p>
+                We are building community through conversations, gatherings, and shared efforts. As new
+                opportunities emerge, this page will highlight events, volunteer needs, and ways to join
+                the work happening across Northwest Ohio.
+            </p>
+
+            <div class="event-list">
+                <div class="event-card">
+                    <h3>Community Gathering</h3>
+                    <p><strong>Coming Soon</strong></p>
+                    <p>We are beginning to plan community meetups and visibility-focused gatherings.</p>
+                </div>
+                <div class="event-card">
+                    <h3>Volunteer Outreach</h3>
+                    <p><strong>Coming Soon</strong></p>
+                    <p>Opportunities to help with outreach, support, and connection-building are being developed.</p>
+                </div>
+                <div class="event-card">
+                    <h3>Listening & Connection</h3>
+                    <p><strong>Coming Soon</strong></p>
+                    <p>We welcome conversations and ideas from neighbors who want to shape what comes next.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Meeting Records</h2>
+            <p>
+                We keep our meeting materials and community updates available so that the work remains open,
+                organized, and easy to follow. This section includes the current meeting template and the most
+                recent meeting minutes.
+            </p>
+
+            <div class="event-list">
+                <div class="event-card">
+                    <h3>Meeting Template</h3>
+                    <p><strong>Reference</strong></p>
+                    <p>Use the standard template for documenting member conversations, decisions, and next steps.</p>
+                    <p><a href="minutes.html">View Template</a></p>
+                </div>
+                <div class="event-card">
+                    <h3>Most Recent Minutes</h3>
+                    <p><strong>PDF</strong></p>
+                    <p>Review the latest meeting summary, progress updates, and actions agreed by the group.</p>
+                    <p><a href="minutes.html">View Minutes</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Get Involved</h2>
+            <p>
+                We invite you to learn more, join the conversation, and help shape this work together. Your
+                voice, time, and presence matter as we build this community from the ground up.
+            </p>
+            <p>
+                <a href="join.html" class="btn">Become a Member</a>
             </p>
         </section>
 
