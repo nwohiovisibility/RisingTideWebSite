@@ -1,0 +1,130 @@
+<!-- =======================================================
+     Filename: minutes.html
+     Last Edit Date: 2026-08-13 EST
+     Version: 1.3.0
+
+     PURPOSE:
+       Public-facing meeting records page for Rising Tide and the
+       Northwest Ohio Visibility Alliance (NOVA). This page keeps
+       meeting records visible, readable, and easy to access in a
+       way that matches the rest of the site.
+
+     DESCRIPTION:
+       This page provides context for the meeting template and the
+       most recent meeting minutes. It presents the documents as a
+       formal part of the website rather than as disconnected files.
+
+     SUPPORTED BY:
+       - header.js      (header injection)
+       - footer.js      (footer injection)
+       - main.js        (general site behavior)
+       - css/styles.css (global site styling)
+
+     DEPENDENCIES:
+       - assets/MeetingTemplate.html
+       - assets/MeetingMinutes/2006-01-28_Page-1.pdf
+       - assets/MeetingMinutes/2006-01-28_Page-2.pdf
+       - assets/MeetingMinutes/2006-01-28_Page-3.pdf
+
+     AUTHOR:
+       Brian Von Wert / Rising Tide
+======================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Records – Rising Tide</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Meeting Records</h1>
+            <p>Templates, updates, and the latest meeting minutes for the community.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Purpose</h2>
+            <p>
+                Meeting records are an important part of keeping the organization transparent, organized,
+                and easy to follow. This page provides a clear overview of the most recent meeting materials
+                and makes the official files straightforward to access.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>What This Includes</h2>
+            <p>
+                The meeting records page brings together the working template used for documentation and
+                the latest meeting minutes from the most recent gathering. Together, these records help
+                preserve the discussion, decisions, and next steps in a consistent format.
+            </p>
+
+            <ul>
+                <li>Standard meeting template for regular documentation</li>
+                <li>Current meeting record for reference and review</li>
+                <li>Downloadable access to the official PDFs for each page</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Meeting Template</h2>
+            <p>
+                This template is used to record decisions, discussion, follow-up items, and next steps from
+                community meetings. It helps keep conversations organized and consistent as the group grows.
+            </p>
+            <p>
+                <a href="assets/MeetingTemplate.html" class="btn" target="_blank" rel="noopener noreferrer">Open Meeting Template</a>
+            </p>
+            <p>
+                <a href="assets/MeetingTemplate.html" download class="btn secondary" style="margin-left: 10px;">Download Template</a>
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Official Record</h2>
+            <p>
+                The latest meeting minutes provide a clear summary of the most recent discussion, decisions,
+                and action items. These are the current public records for the work the group is doing now.
+            </p>
+
+            <div class="event-list">
+                <div class="event-card">
+                    <h3>Page 1</h3>
+                    <p><strong>Meeting Minutes</strong></p>
+                    <p>Opening overview, key discussion points, and early decisions from the meeting.</p>
+                    <p><a href="assets/MeetingMinutes/2006-01-28_Page-1.pdf" target="_blank" rel="noopener noreferrer">Open Page 1</a></p>
+                    <p><a href="assets/MeetingMinutes/2006-01-28_Page-1.pdf" download>Download Page 1</a></p>
+                </div>
+                <div class="event-card">
+                    <h3>Page 2</h3>
+                    <p><strong>Meeting Minutes</strong></p>
+                    <p>Follow-up discussion, updates, and additional actions agreed during the meeting.</p>
+                    <p><a href="assets/MeetingMinutes/2006-01-28_Page-2.pdf" target="_blank" rel="noopener noreferrer">Open Page 2</a></p>
+                    <p><a href="assets/MeetingMinutes/2006-01-28_Page-2.pdf" download>Download Page 2</a></p>
+                </div>
+                <div class="event-card">
+                    <h3>Page 3</h3>
+                    <p><strong>Meeting Minutes</strong></p>
+                    <p>Final recap, outstanding items, and the closing summary for the meeting.</p>
+                    <p><a href="assets/MeetingMinutes/2006-01-28_Page-3.pdf" target="_blank" rel="noopener noreferrer">Open Page 3</a></p>
+                    <p><a href="assets/MeetingMinutes/2006-01-28_Page-3.pdf" download>Download Page 3</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/header.js"></script>
+
+</body>
+</html>
