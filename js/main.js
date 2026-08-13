@@ -1,30 +1,39 @@
 console.log("main.js loaded");
 
 /* =======================================================
-   FILE: main.js
+   FILENAME: main.js
+   LAST EDIT DATE: 2026-08-13 EST
+   VERSION: 1.1.0
+
    PURPOSE:
        Provides general interactive behavior for the Rising Tide
        website that does NOT depend on dynamically injected header
        elements.
+
+   DESCRIPTION:
+       This file includes a defensive leadership toggle system
+       that safely handles missing targets or incomplete markup.
+       It prevents runtime errors when a toggle or bio element is
+       absent.
 ======================================================= */
 
-// Leadership bio toggle system
 document.addEventListener("DOMContentLoaded", function () {
     const toggles = document.querySelectorAll(".leader-toggle");
 
     toggles.forEach(toggle => {
         toggle.addEventListener("click", () => {
             const targetId = toggle.getAttribute("data-target");
-            const targetBio = document.getElementById(targetId);
+            if (!targetId) return;
 
-            // Close all bios first
+            const targetBio = document.getElementById(targetId);
+            if (!targetBio) return;
+
             document.querySelectorAll(".bio").forEach(bio => {
                 if (bio !== targetBio) {
                     bio.style.display = "none";
                 }
             });
 
-            // Toggle the selected bio
             targetBio.style.display =
                 targetBio.style.display === "block" ? "none" : "block";
         });

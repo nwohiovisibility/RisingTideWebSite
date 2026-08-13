@@ -1,5 +1,8 @@
 /* =======================================================
-   FILE: header.js
+   FILENAME: header.js
+   LAST EDIT DATE: 2026-08-13 EST
+   VERSION: 1.1.0
+
    PURPOSE:
        Dynamically loads and injects the shared header component
        into any Rising Tide or NOVA webpage that includes a
@@ -7,9 +10,10 @@
 
    DESCRIPTION:
        This script fetches the contents of header.html and inserts
-       it directly into the DOM. After injection, it reattaches the
-       hamburger menu functionality so mobile navigation works
-       correctly.
+       it directly into the DOM. It includes defensive checks to
+       avoid errors when the element is missing or the fetch fails.
+       After injection, it reattaches the hamburger menu
+       functionality so mobile navigation works correctly.
 
    SUPPORTED BY:
        - header.html (static header markup)
@@ -25,24 +29,36 @@
        - No logic beyond fetch + inject + event binding.
        - Update documentation if navigation structure changes.
        - This script is used by every page in the Rising Tide site.
+       - Added safety checks for early-stage site reliability.
 
-   VERSION: v1.0.0
-   LAST UPDATED: 2026-07-07
-   AUTHOR: Brian Von Wert / Rising Tide
+   AUTHOR:
+       Brian Von Wert / Rising Tide
 ======================================================= */
 
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
+const headerHost = document.getElementById("header");
 
-    // Hamburger menu toggle AFTER header loads
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
+if (headerHost) {
+    fetch("header.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Header fetch failed with status ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            headerHost.innerHTML = data;
 
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("nav-links");
+
+            if (hamburger && navLinks) {
+                hamburger.onclick = () => {
+                    navLinks.classList.toggle("show");
+                };
+            }
+        })
+        .catch(error => {
+            console.error("Unable to load header:", error);
+            headerHost.innerHTML = "<header><div class=\"container\"><p>Navigation unavailable.</p></div></header>";
         });
-    }
-  });
+}
