@@ -1,0 +1,25 @@
+# =======================================================
+#    Filename: robots.txt
+#    Last Edit Date: 2026-08-17 EST
+#    Version: 1.0.0
+#
+#    PURPOSE:
+#      Tells search engine crawlers which parts of the Rising
+#      Tide / Northwest Ohio Visibility Alliance (NOVA) site
+#      they may index, and points them to the sitemap.
+#
+#    DESCRIPTION:
+#      The entire site is public-facing, so all crawlers are
+#      allowed to index everything. No paths are disallowed.
+#
+#    NOTES:
+#      - Update the sitemap URL if the production domain changes.
+#
+#    AUTHOR:
+#      Brian Von Wert / Rising Tide
+# =======================================================
+
+User-agent: *
+Allow: /
+
+Sitemap: https://nwohiovisibility.com/sitemap.xml

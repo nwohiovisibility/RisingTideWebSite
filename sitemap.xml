@@ -1,0 +1,55 @@
+<!-- =======================================================
+     Filename: sitemap.xml
+     Last Edit Date: 2026-08-17 EST
+     Version: 1.0.0
+
+     PURPOSE:
+       Lists the public-facing pages of the Rising Tide and
+       Northwest Ohio Visibility Alliance (NOVA) website so
+       search engines can discover and index them efficiently.
+
+     DESCRIPTION:
+       Standard XML sitemap covering all top-level HTML pages.
+       header.html and footer.html are excluded since they are
+       fragments injected into other pages, not standalone
+       documents.
+
+     NOTES:
+       - Update this file whenever a page is added or removed.
+       - Update <loc> values if the production domain changes.
+
+     AUTHOR:
+       Brian Von Wert / Rising Tide
+======================================================= -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://nwohiovisibility.com/</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/about.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/leadership.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/events.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/minutes.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/support.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/contact.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/join.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/bylaws.html</loc>
+    </url>
+    <url>
+        <loc>https://nwohiovisibility.com/code-of-conduct.html</loc>
+    </url>
+</urlset>
