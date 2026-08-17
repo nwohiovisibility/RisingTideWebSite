@@ -1,9 +1,7 @@
-console.log("main.js loaded");
-
 /* =======================================================
    FILENAME: main.js
-   LAST EDIT DATE: 2026-08-13 EST
-   VERSION: 1.1.0
+   LAST EDIT DATE: 2026-08-17 EST
+   VERSION: 1.2.0
 
    PURPOSE:
        Provides general interactive behavior for the Rising Tide
