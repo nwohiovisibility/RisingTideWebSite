@@ -7,18 +7,17 @@
        key governance documents.
 
      DESCRIPTION:
-       This file defines the static footer displayed across all
-       public-facing pages. It includes links to the Rising Tide
-       bylaws and Code of Conduct, along with the shared contact
-       email used by both Rising Tide and NOVA.
+       This file is the single source of truth for the site
+       footer: links to the Rising Tide bylaws and Code of
+       Conduct, along with the shared contact email used by both
+       Rising Tide and NOVA. It is not linked directly by any
+       page. build.js reads this file and inlines the
+       <footer>...</footer> markup into every top-level page
+       between FOOTER:START/FOOTER:END marker comments.
 
      SUPPORTED BY:
-       External JavaScript modules may inject this footer into
-       pages dynamically:
-
-         - footer.js      (footer injection)
-         - main.js        (general site behavior)
-         - header.js      (header injection for consistency)
+       - build.js (reads this file and inlines it into every page —
+         run `node build.js` after editing this file)
 
      DEPENDENCIES:
        - css/styles.css   (global site styling)
@@ -28,14 +27,18 @@
      NOTES:
        - No logic is embedded here.
        - This file contains only layout and content.
+       - Editing this file has no effect on the live site until
+         `node build.js` is run to regenerate every page.
        - Update documentation when footer structure or links
          change.
 
      VERSION:
-       v1.0.0
+       v1.1.0
+       (Now a build-time source template for build.js instead of
+       a runtime fetch() target)
 
      LAST UPDATED:
-       2026-07-07
+       2026-08-17
 
      AUTHOR:
        Brian Von Wert / Rising Tide

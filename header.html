@@ -7,19 +7,19 @@
        and mobile-friendly menu behavior.
 
      DESCRIPTION:
-       This file defines the static header displayed across all
-       public-facing pages. It includes the Rising Tide logo,
-       primary navigation links, and the hamburger menu used for
-       responsive layouts. All dynamic behavior (menu toggling,
-       injection, etc.) is handled externally.
+       This file is the single source of truth for the site
+       header: the Rising Tide logo, primary navigation links,
+       and the hamburger menu markup used for responsive layouts.
+       It is not linked directly by any page. build.js reads this
+       file and inlines the <header>...</header> markup into every
+       top-level page between HEADER:START/HEADER:END marker
+       comments. The hamburger click behavior is bound at runtime
+       by main.js.
 
      SUPPORTED BY:
-       External JavaScript modules may inject or enhance this
-       header:
-
-         - header.js      (header injection and menu behavior)
-         - main.js        (general site behavior)
-         - footer.js      (footer injection for consistency)
+       - build.js (reads this file and inlines it into every page —
+         run `node build.js` after editing this file)
+       - main.js  (binds the hamburger menu click behavior)
 
      DEPENDENCIES:
        - css/styles.css   (global site styling)
@@ -28,14 +28,18 @@
      NOTES:
        - No logic is embedded here.
        - This file contains only layout and content.
+       - Editing this file has no effect on the live site until
+         `node build.js` is run to regenerate every page.
        - Update documentation when navigation structure or
          branding changes.
 
      VERSION:
-       v1.0.0
+       v1.1.0
+       (Now a build-time source template for build.js instead of
+       a runtime fetch() target)
 
      LAST UPDATED:
-       2026-07-07
+       2026-08-17
 
      AUTHOR:
        Brian Von Wert / Rising Tide

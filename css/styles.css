@@ -14,8 +14,6 @@
      based on the Rising Tide color palette.
 
    SUPPORTED BY:
-     - header.js
-     - footer.js
      - main.js
      - All HTML pages using shared classes and layout rules
 
@@ -30,8 +28,9 @@
      - This stylesheet is used by every page in the site.
 
    VERSION:
-     v1.1.0
-     (Cleaned and unified layout spacing system)
+     v1.2.0
+     (Removed header.js/footer.js references — header/footer are
+     now inlined at build time by build.js, not fetched at runtime)
 
    AUTHOR:
      Brian Von Wert / Rising Tide
