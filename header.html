@@ -34,12 +34,13 @@
          branding changes.
 
      VERSION:
-       v1.1.0
-       (Now a build-time source template for build.js instead of
-       a runtime fetch() target)
+       v1.2.0
+       (Hamburger toggle is now a real <button> with aria-expanded/
+       aria-controls instead of a plain div, for screen reader and
+       keyboard support)
 
      LAST UPDATED:
-       2026-08-17
+       2026-08-19
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -50,11 +51,11 @@
         <img src="assets/logo.png" alt="Rising Tide Logo" class="logo">
 
         <nav>
-            <div class="hamburger" id="hamburger">
+            <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
             <ul class="nav-links" id="nav-links">
               <li><a href="index.html">Home</a></li>

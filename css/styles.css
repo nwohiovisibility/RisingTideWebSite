@@ -28,9 +28,10 @@
      - This stylesheet is used by every page in the site.
 
    VERSION:
-     v1.3.0
-     (Added fieldset/legend reset, checkbox-grid legend spanning,
-     and .sr-only utility for accessible form field grouping)
+     v1.4.0
+     (Hamburger button style reset for real <button> markup;
+     added .leader-arrow indicator with aria-expanded-driven
+     rotation on the leadership bio toggles)
 
    AUTHOR:
      Brian Von Wert / Rising Tide
@@ -189,6 +190,9 @@ main h2 {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .hamburger span {
@@ -458,6 +462,9 @@ fieldset {
 }
 
 .leader-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     background: none;
     border: none;
     padding: 0;
@@ -469,6 +476,20 @@ fieldset {
 
 .leader-toggle:hover {
     text-decoration: underline;
+}
+
+.leader-arrow {
+    width: 0;
+    height: 0;
+    flex-shrink: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--navy);
+    transition: transform 0.2s ease;
+}
+
+.leader-toggle[aria-expanded="true"] .leader-arrow {
+    transform: rotate(180deg);
 }
 
 .bio {

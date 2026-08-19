@@ -50,7 +50,11 @@ const PAGES = [
 ];
 
 function extractTag(html, tagName) {
-    const match = html.match(new RegExp(`<${tagName}[\\s\\S]*?</${tagName}>`));
+    // Strip HTML comments first so mentions of "<tag>...</tag>" inside a
+    // documentation comment (e.g. describing what this function does)
+    // can't be mistaken for the real markup below it.
+    const withoutComments = html.replace(/<!--[\s\S]*?-->/g, "");
+    const match = withoutComments.match(new RegExp(`<${tagName}[\\s\\S]*?</${tagName}>`));
     if (!match) {
         throw new Error(`Could not find <${tagName}> in source file`);
     }

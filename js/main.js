@@ -1,7 +1,7 @@
 /* =======================================================
    FILENAME: main.js
-   LAST EDIT DATE: 2026-08-17 EST
-   VERSION: 1.3.0
+   LAST EDIT DATE: 2026-08-19 EST
+   VERSION: 1.4.0
 
    PURPOSE:
        Provides general interactive behavior for the Rising Tide
@@ -14,7 +14,10 @@
        Includes the mobile nav hamburger toggle and a defensive
        leadership bio toggle system that safely handles missing
        targets or incomplete markup, preventing runtime errors
-       when a toggle or bio element is absent.
+       when a toggle or bio element is absent. Both toggles keep
+       their `aria-expanded` state in sync so screen reader users
+       get the same open/closed signal as the arrow icon and menu
+       visibility give sighted users.
 ======================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -23,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hamburger && navLinks) {
         hamburger.onclick = () => {
-            navLinks.classList.toggle("show");
+            const isOpen = navLinks.classList.toggle("show");
+            hamburger.setAttribute("aria-expanded", String(isOpen));
         };
     }
 
@@ -37,14 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetBio = document.getElementById(targetId);
             if (!targetBio) return;
 
-            document.querySelectorAll(".bio").forEach(bio => {
-                if (bio !== targetBio) {
-                    bio.style.display = "none";
-                }
-            });
+            const isOpen = targetBio.style.display === "block";
 
-            targetBio.style.display =
-                targetBio.style.display === "block" ? "none" : "block";
+            document.querySelectorAll(".bio").forEach(bio => {
+                bio.style.display = "none";
+            });
+            toggles.forEach(t => t.setAttribute("aria-expanded", "false"));
+
+            if (!isOpen) {
+                targetBio.style.display = "block";
+                toggle.setAttribute("aria-expanded", "true");
+            }
         });
     });
 });

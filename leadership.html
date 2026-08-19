@@ -20,12 +20,13 @@
        - header.html/footer.html (inlined by build.js)
 
      VERSION:
-       v1.0.3
-       (Header/footer now inlined at build time by build.js,
-       replacing runtime fetch() injection)
+       v1.1.0
+       (Each leader-toggle button now shows a .leader-arrow
+       indicator and carries aria-expanded/aria-controls so it's
+       visibly and programmatically clear a bio can be opened)
 
      LAST UPDATED:
-       2026-08-17
+       2026-08-19
      AUTHOR:
        Brian Von Wert / Rising Tide
 ======================================================= -->
@@ -59,11 +60,11 @@
         <img src="assets/logo.png" alt="Rising Tide Logo" class="logo">
 
         <nav>
-            <div class="hamburger" id="hamburger">
+            <button type="button" class="hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
             <ul class="nav-links" id="nav-links">
               <li><a href="index.html">Home</a></li>
@@ -116,21 +117,32 @@ Purpose:
 Structure:
     - Each leader is wrapped in <li class="leader-item">.
     - The clickable element is <button class="leader-toggle">.
-    - Each button has data-target="bio-xyz".
+    - Each button has data-target="bio-xyz", plus aria-expanded
+      and aria-controls="bio-xyz" for screen reader state, and a
+      trailing <span class="leader-arrow"> that shows a visual
+      cue (an arrow icon) that the name expands to more info.
     - Each bio is stored in <div id="bio-xyz" class="bio">.
 
 Behavior:
     - Bios are hidden by default via CSS (display: none).
     - JavaScript listens for clicks on .leader-toggle.
     - When clicked:
-        * All bios collapse.
-        * The selected bio expands.
+        * All bios collapse and every button's aria-expanded
+          resets to "false".
+        * The selected bio expands and its button's
+          aria-expanded is set to "true".
+        * CSS rotates .leader-arrow 180deg when its button's
+          aria-expanded is "true".
     - Clicking the same name again collapses it.
 
 Maintenance:
     - To add a new leader:
         * Add a new <li> block.
-        * Give the button a unique data-target.
+        * Give the button a unique data-target, matching
+          aria-controls, aria-expanded="false", and an empty
+          <span class="leader-arrow" aria-hidden="true"></span>
+          (the triangle itself is drawn by CSS borders, not a
+          Unicode glyph, so it renders reliably at a legible size).
         * Give the bio a matching id.
     - To update a bio:
         * Edit the text inside the corresponding <div class="bio">.
@@ -142,8 +154,9 @@ Maintenance:
 
                 <!-- Brian -->
                 <li class="leader-item">
-                    <button class="leader-toggle" data-target="bio-brian">
+                    <button class="leader-toggle" data-target="bio-brian" aria-expanded="false" aria-controls="bio-brian">
                         <strong>Brian Von Wert</strong> – Chair
+                        <span class="leader-arrow" aria-hidden="true"></span>
                     </button>
                     <div id="bio-brian" class="bio">
                         <p>
@@ -160,8 +173,9 @@ Maintenance:
 
                 <!-- Sonya -->
                 <li class="leader-item">
-                    <button class="leader-toggle" data-target="bio-sonya">
+                    <button class="leader-toggle" data-target="bio-sonya" aria-expanded="false" aria-controls="bio-sonya">
                         <strong>Sonya Mavis</strong> – Vice Chair
+                        <span class="leader-arrow" aria-hidden="true"></span>
                     </button>
                     <div id="bio-sonya" class="bio">
                         <p>Bio coming soon.</p>
@@ -170,8 +184,9 @@ Maintenance:
 
                 <!-- Destiny -->
                 <li class="leader-item">
-                    <button class="leader-toggle" data-target="bio-destiny">
+                    <button class="leader-toggle" data-target="bio-destiny" aria-expanded="false" aria-controls="bio-destiny">
                         <strong>Destiny Starry</strong> – Treasurer
+                        <span class="leader-arrow" aria-hidden="true"></span>
                     </button>
                     <div id="bio-destiny" class="bio">
                         <p>Bio coming soon.</p>
@@ -180,8 +195,9 @@ Maintenance:
 
                 <!-- Rebecca -->
                 <li class="leader-item">
-                    <button class="leader-toggle" data-target="bio-rebecca">
+                    <button class="leader-toggle" data-target="bio-rebecca" aria-expanded="false" aria-controls="bio-rebecca">
                         <strong>Rebecca Erford</strong> – Secretary
+                        <span class="leader-arrow" aria-hidden="true"></span>
                     </button>
                     <div id="bio-rebecca" class="bio">
                         <p>Bio coming soon.</p>
@@ -190,8 +206,9 @@ Maintenance:
 
                 <!-- Melissa -->
                 <li class="leader-item">
-                    <button class="leader-toggle" data-target="bio-melissa">
+                    <button class="leader-toggle" data-target="bio-melissa" aria-expanded="false" aria-controls="bio-melissa">
                         <strong>Melissa Renee Ewers</strong> – Director of Activities
+                        <span class="leader-arrow" aria-hidden="true"></span>
                     </button>
                     <div id="bio-melissa" class="bio">
                         <p>Bio coming soon.</p>
@@ -216,8 +233,9 @@ Maintenance:
 
                 <!-- Megan -->
                 <li class="leader-item">
-                    <button class="leader-toggle" data-target="bio-megan">
+                    <button class="leader-toggle" data-target="bio-megan" aria-expanded="false" aria-controls="bio-megan">
                         <strong>Megan A. Brown</strong>
+                        <span class="leader-arrow" aria-hidden="true"></span>
                     </button>
                     <div id="bio-megan" class="bio">
                         <p>Bio coming soon.</p>
@@ -226,8 +244,9 @@ Maintenance:
 
                 <!-- Tom -->
                 <li class="leader-item">
-                    <button class="leader-toggle" data-target="bio-tom">
+                    <button class="leader-toggle" data-target="bio-tom" aria-expanded="false" aria-controls="bio-tom">
                         <strong>Tom Comer</strong>
+                        <span class="leader-arrow" aria-hidden="true"></span>
                     </button>
                     <div id="bio-tom" class="bio">
                         <p>Bio coming soon.</p>
