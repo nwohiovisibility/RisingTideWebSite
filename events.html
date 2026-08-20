@@ -10,10 +10,12 @@
        This file defines the structure and content of the Events
        page. It includes a Google Calendar embed and a direct
        subscription link so visitors can stay updated on all
-       Rising Tide and NOVA activities. Shared header/footer
-       markup is inlined at build time by build.js — edit
-       header.html/footer.html, then run `node build.js` to
-       regenerate.
+       Rising Tide and NOVA activities. A "Stay in the Loop" section
+       below the calendar gives visitors other ways to find out about
+       events (subscribe link, Facebook, contact page) in case the
+       embed is empty or slow to load. Shared header/footer markup is
+       inlined at build time by build.js — edit header.html/footer.html,
+       then run `node build.js` to regenerate.
 
      SUPPORTED BY:
        - main.js
@@ -30,12 +32,13 @@
        - Updated to use the global .content-section spacing system.
 
      VERSION:
-       v1.0.3
-       (Header/footer now inlined at build time by build.js,
-       replacing runtime fetch() injection)
+       v1.1.0
+       (Added a "Stay in the Loop" fallback section with calendar
+       subscribe, Facebook, and contact links, plus an
+       apple-touch-icon link for iOS home screen saves)
 
      LAST UPDATED:
-       2026-08-17
+       2026-08-19
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -48,6 +51,7 @@
     <title>Events – Rising Tide</title>
     <meta name="description" content="See upcoming Rising Tide and NOVA meetings, community gatherings, and outreach events, or subscribe to our shared events calendar.">
     <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     <link rel="canonical" href="https://nwohiovisibility.com/events.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Rising Tide">
@@ -119,15 +123,51 @@
             </p>
 
             <div>
-                <iframe 
+                <iframe
                     title="Rising Tide and NOVA Events Calendar"
-                    src="https://calendar.google.com/calendar/embed?src=c_bc0077d5eefb5ef11a3a0655bc5074e67ea1166750661f975c0c3d74150c4612%40group.calendar.google.com&ctz=America%2FNew_York" 
-                    style="border: 0" 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0" 
+                    src="https://calendar.google.com/calendar/embed?src=c_bc0077d5eefb5ef11a3a0655bc5074e67ea1166750661f975c0c3d74150c4612%40group.calendar.google.com&ctz=America%2FNew_York"
+                    style="border: 0"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
                     scrolling="no">
                 </iframe>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Stay in the Loop</h2>
+            <p>
+                Rising Tide is still growing, so the calendar above may be quiet between
+                gatherings. Here are a few more ways to hear about what's coming up.
+            </p>
+
+            <div class="event-list">
+                <div class="event-card">
+                    <h3>Subscribe to the Calendar</h3>
+                    <p>New events land here automatically.</p>
+                    <p>
+                        <a href="https://calendar.google.com/calendar/u/0?cid=c_bc0077d5eefb5ef11a3a0655bc5074e67ea1166750661f975c0c3d74150c4612@group.calendar.google.com">
+                            Subscribe
+                        </a>
+                    </p>
+                </div>
+                <div class="event-card">
+                    <h3>Follow on Facebook</h3>
+                    <p>Announcements and updates from the community.</p>
+                    <p>
+                        <a href="https://www.facebook.com/groups/wemustbethetide" target="_blank" rel="noopener noreferrer">
+                            We Must Be the Tide
+                        </a>
+                    </p>
+                </div>
+                <div class="event-card">
+                    <h3>Ask Us Directly</h3>
+                    <p>Curious what's next or want to suggest something?</p>
+                    <p>
+                        <a href="contact.html">Get in Touch</a>
+                    </p>
+                </div>
             </div>
         </section>
 
