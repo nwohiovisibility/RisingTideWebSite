@@ -28,10 +28,10 @@
      - This stylesheet is used by every page in the site.
 
    VERSION:
-     v1.4.0
-     (Hamburger button style reset for real <button> markup;
-     added .leader-arrow indicator with aria-expanded-driven
-     rotation on the leadership bio toggles)
+     v1.6.1
+     (Fixed .dropdown-toggle sitting lower than the other nav
+     items — inline-block let its padding inflate the line box;
+     reverted to inline so it matches nav a's box behavior)
 
    AUTHOR:
      Brian Von Wert / Rising Tide
@@ -100,7 +100,8 @@ nav ul {
     gap: 20px;
 }
 
-nav a {
+nav a,
+.dropdown-toggle {
     text-decoration: none;
     color: var(--navy);
     font-weight: bold;
@@ -109,13 +110,51 @@ nav a {
     transition: 0.2s ease;
 }
 
-nav a:hover {
+nav a:hover,
+.dropdown-toggle:hover {
     background-color: var(--slate);
     color: var(--white);
 }
 
+.dropdown-toggle {
+    cursor: pointer;
+}
+
 nav a.active {
     border-bottom: 3px solid var(--yellow);
+}
+
+/* -----------------------------------
+   NAV DROPDOWN (About > Leadership)
+----------------------------------- */
+nav ul li.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 160px;
+    padding: 8px 0;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
 }
 
 /* -----------------------------------
@@ -230,6 +269,14 @@ main h2 {
 
     .nav-links li {
         margin: 10px 0;
+    }
+
+    .dropdown-menu {
+        display: block;
+        position: static;
+        box-shadow: none;
+        padding: 0 0 0 15px;
+        margin-top: 5px;
     }
 }
 

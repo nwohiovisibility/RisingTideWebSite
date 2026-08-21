@@ -34,13 +34,13 @@
          branding changes.
 
      VERSION:
-       v1.2.0
-       (Hamburger toggle is now a real <button> with aria-expanded/
-       aria-controls instead of a plain div, for screen reader and
-       keyboard support)
+       v1.7.0
+       (Split the governance documents out of Who Are We into
+       their own "Governance" dropdown — Meeting Records, Bylaws,
+       Code of Conduct — so Who Are We stays identity-only)
 
      LAST UPDATED:
-       2026-08-19
+       2026-08-20
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -59,13 +59,30 @@
 
             <ul class="nav-links" id="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="leadership.html">Leadership</a></li>
+              <li class="dropdown">
+                <span class="dropdown-toggle" tabindex="0">Who Are We</span>
+                <ul class="dropdown-menu">
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="leadership.html">Leadership</a></li>
+                </ul>
+              </li>
               <li><a href="events.html">Events</a></li>
-              <li><a href="minutes.html">Minutes</a></li>
-              <li><a href="support.html">Support Us</a></li>
+              <li class="dropdown">
+                <span class="dropdown-toggle" tabindex="0">Governance</span>
+                <ul class="dropdown-menu">
+                  <li><a href="minutes.html">Meeting Records</a></li>
+                  <li><a href="bylaws.html">Bylaws</a></li>
+                  <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <span class="dropdown-toggle" tabindex="0">Get Involved</span>
+                <ul class="dropdown-menu">
+                  <li><a href="support.html">Support Us</a></li>
+                  <li><a href="join.html">Join Us</a></li>
+                </ul>
+              </li>
               <li><a href="contact.html">Contact</a></li>
-              <li><a href="join.html">Join Us</a></li>
             </ul>
         </nav>
     </div>
