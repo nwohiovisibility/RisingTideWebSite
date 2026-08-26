@@ -32,13 +32,12 @@
        - Updated to use the global .content-section spacing system.
 
      VERSION:
-       v1.2.0
-       (Social share image swapped to WordCloud1200x630.png with
-       og:image:width/height; removed twitter:* meta tags since the
-       org has no Twitter/X presence — Open Graph covers the rest)
+       v1.5.0
+       (Removed the duplicate RTscheduler button from the hero;
+       it now lives only in the Subscribe/RTscheduler button row)
 
      LAST UPDATED:
-       2026-08-19
+       2026-08-25
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -130,12 +129,15 @@
                 You can view upcoming events below or subscribe to stay updated automatically.
             </p>
 
-            <p>
-                <a href="https://calendar.google.com/calendar/u/0?cid=c_bc0077d5eefb5ef11a3a0655bc5074e67ea1166750661f975c0c3d74150c4612@group.calendar.google.com" 
+            <div class="btn-row">
+                <a href="https://calendar.google.com/calendar/u/0?cid=c_bc0077d5eefb5ef11a3a0655bc5074e67ea1166750661f975c0c3d74150c4612@group.calendar.google.com"
                    class="btn">
                    Subscribe to Our Calendar
                 </a>
-            </p>
+                <a href="https://scheduler.nwohiovisibility.com" class="btn" target="_blank" rel="noopener noreferrer">
+                    Book with RTscheduler
+                </a>
+            </div>
 
             <div>
                 <iframe

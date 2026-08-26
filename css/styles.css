@@ -28,10 +28,9 @@
      - This stylesheet is used by every page in the site.
 
    VERSION:
-     v1.9.0
-     (Desktop hero text is now centered within the space left of
-     the graphic instead of left-aligned; the intro paragraph gets
-     a max-width so it wraps to two balanced lines)
+     v1.9.4
+     (Removed the now-unused .hero--events / .hero-cta corner
+     button rules — RTscheduler link lives only in .btn-row now)
 
    AUTHOR:
      Brian Von Wert / Rising Tide
@@ -230,6 +229,13 @@ nav ul li.dropdown {
 .btn:hover {
     background-color: var(--yellow);
     color: var(--navy);
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
 }
 
 /* -----------------------------------
