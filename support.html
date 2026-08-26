@@ -30,12 +30,13 @@
          methods change.
 
      VERSION:
-       v1.3.0
-       (Donate section now links to the live Zeffy donation form
-       instead of "coming soon" placeholder text)
+       v1.4.1
+       (Donate button is now a plain <button>, not a link, so
+       Zeffy's script opens the modal without also opening a
+       competing new tab)
 
      LAST UPDATED:
-       2026-08-20
+       2026-08-25
 
      AUTHOR:
        Brian Von Wert / Rising Tide
@@ -59,6 +60,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://nwohiovisibility.com/support.html">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 </head>
 
 <body>
@@ -153,7 +155,7 @@
             </p>
 
             <p>
-                <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21596" class="btn" target="_blank" rel="noopener">Donate Now</a>
+                <button type="button" class="btn" zeffy-form-link="https://www.zeffy.com/embed/donation-form/donate-to-change-lives-21596?modal=true">Donate Now</button>
             </p>
         </section>
 

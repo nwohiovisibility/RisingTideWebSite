@@ -28,9 +28,9 @@
      - This stylesheet is used by every page in the site.
 
    VERSION:
-     v1.9.4
-     (Removed the now-unused .hero--events / .hero-cta corner
-     button rules — RTscheduler link lives only in .btn-row now)
+     v1.9.5
+     (.btn resets border/font/cursor so it also looks right on
+     <button> elements, needed for the Zeffy donate buttons)
 
    AUTHOR:
      Brian Von Wert / Rising Tide
@@ -220,9 +220,12 @@ nav ul li.dropdown {
     background-color: var(--navy);
     color: var(--white);
     padding: 12px 25px;
+    border: none;
     border-radius: 6px;
     text-decoration: none;
+    font: inherit;
     font-weight: bold;
+    cursor: pointer;
     transition: 0.2s ease;
 }
 

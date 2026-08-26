@@ -1,10 +1,10 @@
 <!-- =======================================================
      Filename: index.html
-     Last Edit Date: 2026-08-20 EST
-     Version: 2.0.0
-     (Added the "Different Blooms, Different Roots" graphic to the
-     hero, laid out beside the heading; responsive via CSS sizing,
-     stacks above the text on mobile)
+     Last Edit Date: 2026-08-25 EST
+     Version: 2.1.1
+     (Donate button is now a plain <button>, not a link, so
+     Zeffy's script opens the modal without also opening a
+     competing new tab)
 
      PURPOSE:
        Public-facing home page for the Rising Tide website and
@@ -60,6 +60,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://nwohiovisibility.com/">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 </head>
 
 <body>
@@ -118,7 +119,7 @@
                 <div>
                     <a href="join.html" class="btn">Join Us</a>
                     <a href="contact.html" class="btn" style="margin-left: 10px;">Contact Us</a>
-                    <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-21596" class="btn" style="margin-left: 10px;" target="_blank" rel="noopener">Donate</a>
+                    <button type="button" class="btn" style="margin-left: 10px;" zeffy-form-link="https://www.zeffy.com/embed/donation-form/donate-to-change-lives-21596?modal=true">Donate</button>
                 </div>
             </div>
         </div>
