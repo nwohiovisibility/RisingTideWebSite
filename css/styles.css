@@ -28,9 +28,9 @@
      - This stylesheet is used by every page in the site.
 
    VERSION:
-     v1.9.5
-     (.btn resets border/font/cursor so it also looks right on
-     <button> elements, needed for the Zeffy donate buttons)
+     v1.9.9
+     (Zeffy donate modal height preference tuned from 80vh to
+     54vh within its clamp(600px, _, 800px) bounds)
 
    AUTHOR:
      Brian Von Wert / Rising Tide
@@ -232,6 +232,22 @@ nav ul li.dropdown {
 .btn:hover {
     background-color: var(--yellow);
     color: var(--navy);
+}
+
+/* Zeffy's embed script sizes the donation modal with inline styles
+   (top/bottom/left/right: 5%/5%/10%/10% on desktop) that we can't
+   edit directly since it's their hosted script. Override via
+   !important, targeting the wrapper by its iframe's title. */
+@media (min-width: 769px) {
+    div:has(> iframe[title="Form powered and secured by Zeffy"]) {
+        top: 50% !important;
+        left: 50% !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: translate(-50%, -50%) !important;
+        width: clamp(360px, 42vw, 520px) !important;
+        height: clamp(600px, 54vh, 800px) !important;
+    }
 }
 
 .btn-row {
