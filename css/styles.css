@@ -28,9 +28,9 @@
      - This stylesheet is used by every page in the site.
 
    VERSION:
-     v1.9.9
-     (Zeffy donate modal height preference tuned from 80vh to
-     54vh within its clamp(600px, _, 800px) bounds)
+     v1.10.0
+     (Added .event-card--partner modifier: yellow left border to
+     accent community-partner cards, e.g. HUGS in Ohio on Events)
 
    AUTHOR:
      Brian Von Wert / Rising Tide
@@ -375,6 +375,10 @@ main h2 {
 
 .event-card p {
     margin-bottom: 0.5rem;
+}
+
+.event-card--partner {
+    border-left: 4px solid var(--yellow);
 }
 
 /* -----------------------------------
