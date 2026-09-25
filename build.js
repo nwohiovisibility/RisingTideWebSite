@@ -1,7 +1,6 @@
 /* =======================================================
    FILENAME: build.js
    LAST EDIT DATE: 2026-08-17 EST
-   VERSION: 1.0.0
 
    PURPOSE:
        Inlines the shared header.html and footer.html markup

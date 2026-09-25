@@ -1,7 +1,6 @@
 /* =======================================================
    FILENAME: main.js
    LAST EDIT DATE: 2026-08-19 EST
-   VERSION: 1.4.0
 
    PURPOSE:
        Provides general interactive behavior for the Rising Tide
