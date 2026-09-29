@@ -166,6 +166,20 @@ nav ul li.dropdown {
     text-align: center;
 }
 
+.hero .hero-announcement {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--navy);
+    margin: 40px 0 0;
+    padding: 0 16px;
+    max-width: none;
+}
+
+.hero-announcement a {
+    color: var(--navy);
+}
+
 .hero-graphic {
     display: block;
     width: 100%;
